@@ -1,0 +1,28 @@
+# <%= name %>
+
+> <%= description %>
+
+## Types
+
+```flowtype
+type GqlErrorLocation = {
+  line: number,
+  column: number
+};
+
+type GqlError = {
+  message: string,
+  locations?: Array<GqlErrorLocation>
+};
+
+type GqlResponse<Data> = {
+  data?: Data,
+  errors?: Array<GqlError>
+};
+```
+
+## API
+
+## License
+
+[<%= license %>](LICENSE.txt) :copyright: **Jumpn Limited** / <%= author.name %> (<%= author.email %>)
