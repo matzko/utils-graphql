@@ -1,6 +1,6 @@
-# @jumpn/utils-promise
+# @jumpn/utils-graphql
 
-> Promise utilities
+> GraphQL utilities
 
 ## Types
 
@@ -15,7 +15,10 @@ type GqlError = {
   locations?: Array<GqlErrorLocation>
 };
 
-type GqlResponse<Data> = {data?: Data, errors?: Array<GqlError>};
+type GqlResponse<Data> = {
+  data?: Data,
+  errors?: Array<GqlError>
+};
 ```
 
 ## API
