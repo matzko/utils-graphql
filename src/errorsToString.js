@@ -25,7 +25,7 @@ const errorToString = ({message, locations}) =>
  * // First Error (2:10)
  * // Second Error (4:2)
  */
-const errorsToString = (gqlErrors: Array<GqlError>) =>
+const errorsToString = (gqlErrors: Array<GqlError>): string =>
   gqlErrors.map(errorToString).join("\n");
 
 export default errorsToString;

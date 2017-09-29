@@ -49,6 +49,8 @@ const error = errorsToString(gqlRespose.errors);
 // Second Error (4:2)
 ```
 
+Returns **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+
 ## License
 
 [MIT](LICENSE.txt) :copyright: **Jumpn Limited** / Mauro Titimoli (mauro@jumpn.com)
