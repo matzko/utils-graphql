@@ -10,9 +10,16 @@ type GqlError = {
   locations?: Array<GqlErrorLocation>
 };
 
+type GqlRequest<Variables: void | Object = void> = {
+  operation: string,
+  variables?: Variables
+};
+
 type GqlResponse<Data> = {
   data?: Data,
   errors?: Array<GqlError>
 };
 
-export type {GqlError, GqlResponse};
+type GqlOperationType = "mutation" | "query" | "subscription";
+
+export type {GqlError, GqlOperationType, GqlRequest, GqlResponse};
