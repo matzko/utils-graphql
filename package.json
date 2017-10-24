@@ -42,6 +42,7 @@
     "url": "https://github.com/jumpn/utils-graphql/issues"
   },
   "homepage": "https://github.com/jumpn/utils-graphql#readme",
+  "keywords": ["flow", "graphql", "utilities", "utils"],
   "dependencies": {
     "babel-runtime": "6.26.0"
   },
