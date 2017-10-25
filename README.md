@@ -15,10 +15,17 @@ type GqlError = {
   locations?: Array<GqlErrorLocation>
 };
 
+type GqlRequest<Variables: void | Object = void> = {
+  operation: string,
+  variables?: Variables
+};
+
 type GqlResponse<Data> = {
   data?: Data,
   errors?: Array<GqlError>
 };
+
+type GqlOperationType = "mutation" | "query" | "subscription";
 ```
 
 ## API
@@ -50,6 +57,32 @@ const error = errorsToString(gqlRespose.errors);
 ```
 
 Returns **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+
+### getOperationType
+
+Returns the type of the given operation
+
+**Parameters**
+
+-   `operation` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+
+**Examples**
+
+```javascript
+const operation = `
+  subscription userSubscription($userId: ID!) {
+    user(userId: $userId) {
+      id
+      name
+    }
+  }
+`;
+const operationType = getOperationType(operation);
+
+console.log(operationType); // "subscription"
+```
+
+Returns **(void | GqlOperationType)** 
 
 ## License
 
