@@ -85,7 +85,7 @@ Returns **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refer
 
 ### getOperationType
 
-Returns the type of the given operation
+Returns the type (query, mutation, or subscription) of the given operation
 
 **Parameters**
 
@@ -108,7 +108,7 @@ const operationType = getOperationType(operation);
 console.log(operationType); // "subscription"
 ```
 
-Returns **(void | GqlOperationType)** 
+Returns **GqlOperationType** 
 
 ## License
 

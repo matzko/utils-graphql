@@ -8,7 +8,7 @@ const getOperationTypeFromMatched = (matched: string): GqlOperationType =>
   matched === "{" ? "query" : (matched: any);
 
 /**
- * Returns the type of the given operation
+ * Returns the type (query, mutation, or subscription) of the given operation
  *
  * @example
  *
@@ -25,10 +25,14 @@ const getOperationTypeFromMatched = (matched: string): GqlOperationType =>
  *
  * console.log(operationType); // "subscription"
  */
-const getOperationType = (operation: string): void | GqlOperationType => {
+const getOperationType = (operation: string): GqlOperationType => {
   const result = operation.match(operationTypeRe);
 
-  return result ? getOperationTypeFromMatched(result[1]) : undefined;
+  if (!result) {
+    throw new TypeError(`Invalid operation:\n${operation}`);
+  }
+
+  return getOperationTypeFromMatched(result[1]);
 };
 
 export default getOperationType;
