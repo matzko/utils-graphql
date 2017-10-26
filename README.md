@@ -77,6 +77,7 @@ const operation = `
     }
   }
 `;
+
 const operationType = getOperationType(operation);
 
 console.log(operationType); // "subscription"
