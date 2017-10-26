@@ -1,22 +1,21 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [@jumpn/utils-graphql](#jumpnutils-graphql)
-  - [Installation](#installation)
-    - [Using npm](#using-npm)
-    - [Using yarn](#using-yarn)
-  - [Types](#types)
-  - [API](#api)
-    - [errorsToString](#errorstostring)
-    - [getOperationType](#getoperationtype)
-  - [License](#license)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # @jumpn/utils-graphql
 
 > GraphQL utilities
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<!-- END doctoc -->
+
+- [Installation](#installation)
+  - [Using npm](#using-npm)
+  - [Using yarn](#using-yarn)
+- [Types](#types)
+- [API](#api)
+  - [errorsToString](#errorstostring)
+  - [getOperationType](#getoperationtype)
+- [License](#license)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Installation
 
