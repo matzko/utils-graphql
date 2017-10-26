@@ -2,6 +2,16 @@
 
 > GraphQL utilities
 
+## Installation
+
+### Using [npm](https://docs.npmjs.com/cli/npm)
+
+    $ npm install --save @jumpn/utils-graphql
+
+### Using [yarn](https://yarnpkg.com)
+
+    $ yarn add @jumpn/utils-graphql
+
 ## Types
 
 ```flowtype
