@@ -121,6 +121,8 @@ Returns true if documentNode has a subscription or false otherwise
 
 -   `documentNode` **DocumentNode** 
 
+Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** 
+
 ## License
 
 [MIT](LICENSE.txt) :copyright: **Jumpn Limited** / Mauro Titimoli (mauro@jumpn.com)

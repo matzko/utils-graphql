@@ -9,7 +9,7 @@ const isSubscription = definition =>
 /**
  * Returns true if documentNode has a subscription or false otherwise
  */
-const hasSubscription = (documentNode: DocumentNode) =>
+const hasSubscription = (documentNode: DocumentNode): boolean =>
   documentNode.definitions.some(isSubscription);
 
 export default hasSubscription;
