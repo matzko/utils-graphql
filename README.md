@@ -13,6 +13,7 @@
 - [API](#api)
   - [errorsToString](#errorstostring)
   - [getOperationType](#getoperationtype)
+  - [hasSubscription](#hassubscription)
 - [License](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -30,6 +31,8 @@
 ## Types
 
 ```flowtype
+export type {DocumentNode} from "graphql/language/ast";
+
 type GqlErrorLocation = {
   line: number,
   column: number
@@ -109,6 +112,14 @@ console.log(operationType); // "subscription"
 ```
 
 Returns **GqlOperationType** 
+
+### hasSubscription
+
+Returns true if documentNode has a subscription or false otherwise
+
+**Parameters**
+
+-   `documentNode` **DocumentNode** 
 
 ## License
 
