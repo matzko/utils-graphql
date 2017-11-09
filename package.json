@@ -1,6 +1,6 @@
 {
   "name": "@jumpn/utils-graphql",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "GraphQL utilities",
   "module": "dist/index.js",
   "main": "compat/cjs/index.js",
