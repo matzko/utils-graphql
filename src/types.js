@@ -17,6 +17,11 @@ type GqlRequest<Variables: void | Object = void> = {
   variables?: Variables
 };
 
+type GqlRequestCompat<Variables: void | Object = void> = {
+  query: string,
+  variables?: Variables
+};
+
 type GqlResponse<Data> = {
   data?: Data,
   errors?: Array<GqlError>
@@ -24,4 +29,10 @@ type GqlResponse<Data> = {
 
 type GqlOperationType = "mutation" | "query" | "subscription";
 
-export type {GqlError, GqlOperationType, GqlRequest, GqlResponse};
+export type {
+  GqlError,
+  GqlOperationType,
+  GqlRequest,
+  GqlRequestCompat,
+  GqlResponse
+};

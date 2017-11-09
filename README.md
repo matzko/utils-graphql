@@ -14,6 +14,8 @@
   - [errorsToString](#errorstostring)
   - [getOperationType](#getoperationtype)
   - [hasSubscription](#hassubscription)
+  - [requestFromCompat](#requestfromcompat)
+  - [requestToCompat](#requesttocompat)
 - [License](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -122,6 +124,62 @@ Returns true if documentNode has a subscription or false otherwise
 -   `documentNode` **DocumentNode** 
 
 Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** 
+
+### requestFromCompat
+
+Creates a GqlRequest using given GqlRequestCompat
+
+**Parameters**
+
+-   `gqlRequestCompat` **GqlRequestCompat&lt;Variables>** 
+    -   `gqlRequestCompat.query`  
+    -   `gqlRequestCompat.variables`  
+
+**Examples**
+
+```javascript
+const query = `
+  query userQuery($userId: ID!) {
+    user(userId: $userId) {
+      id
+      email
+    }
+  }
+`;
+
+console.log(requestFromCompat({query, variables: {userId: 10}}));
+// {operation: "...", variables: {userId: 10}}
+```
+
+Returns **GqlRequest&lt;Variables>** 
+
+### requestToCompat
+
+Creates a GqlRequest using given GqlRequestCompat
+
+**Parameters**
+
+-   `gqlRequest` **GqlRequest&lt;Variables>** 
+    -   `gqlRequest.operation`  
+    -   `gqlRequest.variables`  
+
+**Examples**
+
+```javascript
+const operation = `
+  query userQuery($userId: ID!) {
+    user(userId: $userId) {
+      id
+      email
+    }
+  }
+`;
+
+console.log(requestToCompat({operation, variables: {userId: 10}}));
+// {query: "...", variables: {userId: 10}}
+```
+
+Returns **GqlRequestCompat&lt;Variables>** 
 
 ## License
 
