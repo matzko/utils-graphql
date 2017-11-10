@@ -4,4 +4,4 @@ indexIgnore.sed
 readmeTemplate.ejs
 rollup.config.js
 yarn.lock
-yarn-error.lock
+yarn-error.log
