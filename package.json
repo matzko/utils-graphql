@@ -27,6 +27,9 @@
     "type": "git",
     "url": "git+https://github.com/jumpn/utils-graphql.git"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "Mauro Titimoli <mauro@jumpn.com> (https://github.com/mgtitimoli)",
   "license": "MIT",
   "bugs": {
