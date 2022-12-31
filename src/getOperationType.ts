@@ -1,11 +1,10 @@
-// @flow
-
 import type {GqlOperationType} from "./types";
 
 const operationTypeRe = /^\s*(query|mutation|subscription|\{)/;
 
-const getOperationTypeFromMatched = (matched: string): GqlOperationType =>
-  matched === "{" ? "query" : (matched: any);
+function getOperationTypeFromMatched(matched: string): GqlOperationType | string {
+  return (matched === "{" ? "query" : matched)
+}
 
 /**
  * Returns the type (query, mutation, or subscription) of the given operation
@@ -25,7 +24,7 @@ const getOperationTypeFromMatched = (matched: string): GqlOperationType =>
  *
  * console.log(operationType); // "subscription"
  */
-const getOperationType = (operation: string): GqlOperationType => {
+function getOperationType (operation: string): GqlOperationType | string {
   const result = operation.match(operationTypeRe);
 
   if (!result) {

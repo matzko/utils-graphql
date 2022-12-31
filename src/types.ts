@@ -1,29 +1,27 @@
-// @flow
-
-type GqlErrorLocation = {|
+type GqlErrorLocation = {
   line: number,
   column: number
-|};
+};
 
-type GqlError = {|
+type GqlError = {
   message: string,
   locations?: Array<GqlErrorLocation>
-|};
+};
 
-type GqlRequest<Variables: void | Object = void> = {|
+type GqlRequest<Variables> = {
   operation: string,
   variables?: Variables
-|};
+};
 
-type GqlRequestCompat<Variables: void | Object = void> = {|
+type GqlRequestCompat<Variables> = {
   query: string,
   variables?: Variables
-|};
+};
 
-type GqlResponse<Data> = {|
+type GqlResponse<Data> = {
   data?: Data,
   errors?: Array<GqlError>
-|};
+};
 
 type GqlOperationType = "mutation" | "query" | "subscription";
 

@@ -1,5 +1,3 @@
-// @flow
-
 import type {GqlRequest, GqlRequestCompat} from "./types";
 
 /**
@@ -22,10 +20,11 @@ import type {GqlRequest, GqlRequestCompat} from "./types";
  * console.log(requestToCompat({operation, variables: {userId: 10}}));
  * // {query: "...", variables: {userId: 10}}
  */
-const requestToCompat = <Variables: void | Object>({
+function requestToCompat( {
   operation: query,
   variables
-}: GqlRequest<Variables>): GqlRequestCompat<Variables> =>
-  variables ? {query, variables} : {query};
+}: GqlRequest<Variables>): GqlRequestCompat<Variables> {
+  return variables ? {query, variables} : {query};
+}
 
 export default requestToCompat;

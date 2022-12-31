@@ -1,5 +1,3 @@
-// @flow
-
 import type {GqlError} from "./types";
 
 const locationsToString = locations =>
