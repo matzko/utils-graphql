@@ -1,4 +1,5 @@
-import type {GqlRequest, GqlRequestCompat} from "./types";
+import { Variables } from '../../../src/types'
+import type { GqlRequest, GqlRequestCompat } from './types'
 
 /**
  * Creates a GqlRequest using given GqlRequestCompat
@@ -6,7 +7,7 @@ import type {GqlRequest, GqlRequestCompat} from "./types";
  * @param {GqlRequest<Variables>} gqlRequest
  *
  * @return {GqlRequestCompat<Variables>}
- * 
+ *
  * @example
  * const operation = `
  *   query userQuery($userId: ID!) {
@@ -16,15 +17,15 @@ import type {GqlRequest, GqlRequestCompat} from "./types";
  *     }
  *   }
  * `;
- * 
+ *
  * console.log(requestToCompat({operation, variables: {userId: 10}}));
  * // {query: "...", variables: {userId: 10}}
  */
-function requestToCompat( {
+function requestToCompat({
   operation: query,
   variables
 }: GqlRequest<Variables>): GqlRequestCompat<Variables> {
-  return variables ? {query, variables} : {query};
+  return variables ? { query, variables } : { query }
 }
 
-export default requestToCompat;
+export default requestToCompat
