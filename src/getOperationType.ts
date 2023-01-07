@@ -1,9 +1,11 @@
-import type {GqlOperationType} from "./types";
+import type { GqlOperationType } from './types'
 
-const operationTypeRe = /^\s*(query|mutation|subscription|\{)/;
+const operationTypeRe = /^\s*(query|mutation|subscription|\{)/
 
-function getOperationTypeFromMatched(matched: string): GqlOperationType | string {
-  return (matched === "{" ? "query" : matched)
+function getOperationTypeFromMatched(
+  matched: string
+): GqlOperationType | string {
+  return matched === '{' ? 'query' : matched
 }
 
 /**
@@ -24,14 +26,14 @@ function getOperationTypeFromMatched(matched: string): GqlOperationType | string
  *
  * console.log(operationType); // "subscription"
  */
-function getOperationType (operation: string): GqlOperationType | string {
-  const result = operation.match(operationTypeRe);
+function getOperationType(operation: string): GqlOperationType | string {
+  const result = operation.match(operationTypeRe)
 
   if (!result) {
-    throw new TypeError(`Invalid operation:\n${operation}`);
+    throw new TypeError(`Invalid operation:\n${operation}`)
   }
 
-  return getOperationTypeFromMatched(result[1]);
-};
+  return getOperationTypeFromMatched(result[1])
+}
 
-export default getOperationType;
+export default getOperationType

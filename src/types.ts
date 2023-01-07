@@ -1,29 +1,29 @@
 type GqlErrorLocation = {
-  line: number,
+  line: number
   column: number
-};
+}
 
 type GqlError = {
-  message: string,
+  message: string
   locations?: Array<GqlErrorLocation>
-};
+}
 
 type GqlRequest<Variables> = {
-  operation: string,
+  operation: string
   variables?: Variables
-};
+}
 
 type GqlRequestCompat<Variables> = {
-  query: string,
+  query: string
   variables?: Variables
-};
+}
 
 type GqlResponse<Data> = {
-  data?: Data,
+  data?: Data
   errors?: Array<GqlError>
-};
+}
 
-type GqlOperationType = "mutation" | "query" | "subscription";
+type GqlOperationType = 'mutation' | 'query' | 'subscription'
 
 export type {
   GqlError,
@@ -31,4 +31,4 @@ export type {
   GqlRequest,
   GqlRequestCompat,
   GqlResponse
-};
+}

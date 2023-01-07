@@ -1,10 +1,10 @@
-import type {GqlError} from "./types";
+import type { GqlError } from './types'
 
-const locationsToString = locations =>
-  locations.map(({column, line}) => `${line}:${column}`).join("; ");
+const locationsToString = (locations) =>
+  locations.map(({ column, line }) => `${line}:${column}`).join('; ')
 
-const errorToString = ({message, locations}) =>
-  message + (locations ? ` (${locationsToString(locations)})` : "");
+const errorToString = ({ message, locations }) =>
+  message + (locations ? ` (${locationsToString(locations)})` : '')
 
 /**
  * Transforms an array of GqlError into a string.
@@ -24,7 +24,7 @@ const errorToString = ({message, locations}) =>
  * // Second Error (4:2)
  */
 const errorsToString = function (gqlErrors: Array<GqlError>): string {
-  return gqlErrors.map(errorToString).join("\n");
+  return gqlErrors.map(errorToString).join('\n')
 }
 
-export { errorsToString };
+export { errorsToString }
